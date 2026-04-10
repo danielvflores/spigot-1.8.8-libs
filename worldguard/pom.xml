@@ -4,20 +4,25 @@
     <parent>
         <groupId>com.github.danielvflores</groupId>
         <artifactId>spigot-libs</artifactId>
-        <version>6.2</version>
+        <version>${project.version}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>worldguard</artifactId>
-    <packaging>jar</packaging>
+
+    <!-- MUY IMPORTANTE -->
+    <packaging>pom</packaging>
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
                 <version>3.5.0</version>
                 <executions>
                     <execution>
+                        <id>attach-artifact</id>
                         <phase>package</phase>
                         <goals>
                             <goal>attach-artifact</goal>
@@ -33,6 +38,8 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
+
 </project>
